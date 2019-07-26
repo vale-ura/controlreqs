@@ -5,6 +5,10 @@ const reqController = require('./controllers/REQController');
 const userController = require('./controllers/UserController');
 const mongoConnection = require('./database/connection');
 
+//Body Parser Middleware
+app.use(express.urlencoded({extended:true}))
+app.use(express.json());
+
 // test route
 app.get('/', (req,res) => {
     res.send('Already to listen')
